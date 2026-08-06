@@ -312,3 +312,64 @@
     padding: var(--space-5) var(--space-5);
   }
 }
+
+/* ── DATE-ONLY MONTH SCHEDULE ───────────── */
+.seminar-months {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.seminar-month {
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-base);
+}
+
+.seminar-month h3 {
+  margin-bottom: var(--space-5);
+  color: var(--color-navy);
+  font-size: var(--text-h4-size);
+  font-weight: var(--weight-semibold);
+}
+
+.seminar-dates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.seminar-date {
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-inverse);
+  background: var(--color-navy);
+  box-shadow: var(--shadow-sm);
+}
+
+.seminar-date strong {
+  color: var(--color-yellow);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+}
+
+.seminar-date span {
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--weight-medium);
+}
+
+@media (max-width: 767px) {
+  .seminar-section-heading { margin-bottom: var(--space-6); }
+  .seminar-months { gap: var(--space-4); }
+  .seminar-month { padding: var(--space-5); }
+  .seminar-month h3 { margin-bottom: var(--space-4); text-align: center; }
+  .seminar-dates { gap: var(--space-2); }
+  .seminar-date { min-height: 108px; }
+  .seminar-date strong { font-size: 2.2rem; }
+  .seminar-signup { margin-top: var(--space-2); }
+}

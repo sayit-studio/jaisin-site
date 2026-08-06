@@ -1,8 +1,15 @@
 import './PageHeader.css'
 
-export default function PageHeader({ eyebrow, title, desc }) {
+export default function PageHeader({ eyebrow, title, desc, image, mobileImage }) {
   return (
-    <header className="page-header">
+    <header className={`page-header${image ? ' page-header--media' : ''}`}>
+      {image && (
+        <picture className="page-header__media" aria-hidden="true">
+          {mobileImage && <source media="(max-width: 767px)" srcSet={mobileImage} />}
+          <img src={image} alt="" />
+        </picture>
+      )}
+      {image && <span className="page-header__scrim" aria-hidden="true" />}
       <div className="container page-header__inner">
         {eyebrow && <p className="text-label page-header__eyebrow">{eyebrow}</p>}
         <h1 className="page-header__title">{title}</h1>

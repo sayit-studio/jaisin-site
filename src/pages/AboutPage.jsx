@@ -99,6 +99,8 @@ export default function AboutPage() {
         eyebrow="關於宅心驗屋"
         title="比你更在乎家的細節。"
         desc="用專業與完整紀錄，守護家的每個細節。"
+        image={asset('assets/banners/about-desktop.webp')}
+        mobileImage={asset('assets/banners/about-mobile.webp')}
       />
 
       {/* 品牌理念 */}

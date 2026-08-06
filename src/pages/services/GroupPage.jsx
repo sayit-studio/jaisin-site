@@ -80,6 +80,8 @@ export default function GroupPage() {
         eyebrow="社區團購驗屋"
         title="社區一起驗，更有力量"
         desc="統一排程、獨立報告，讓交屋溝通更有效率。"
+        image={asset('assets/banners/group-desktop.webp')}
+        mobileImage={asset('assets/banners/group-mobile.webp')}
       />
 
       {/* 優勢 */}
