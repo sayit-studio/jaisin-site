@@ -86,3 +86,18 @@
     letter-spacing: -0.025em;
   }
 }
+/* Banner copy: no eyebrow and no line breaks. */
+.page-header__eyebrow { display: none !important; }
+.page-header__title,
+.page-header__desc {
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap !important;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 767px) {
+  .page-header__title { font-size: clamp(1.18rem, 5.65vw, 2.75rem); }
+  .page-header__desc { font-size: clamp(0.64rem, 3.12vw, 1rem); }
+}

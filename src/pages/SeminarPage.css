@@ -392,3 +392,17 @@
     letter-spacing: -0.025em;
   }
 }
+.seminar-hero__eyebrow { display: none !important; }
+.seminar-hero__title,
+.seminar-hero__desc {
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap !important;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 767px) {
+  .seminar-hero__title { font-size: clamp(1.18rem, 5.65vw, 2.75rem); }
+  .seminar-hero__desc { font-size: clamp(0.64rem, 3.12vw, 1rem); }
+}
