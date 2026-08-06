@@ -1,0 +1,112 @@
+.banner-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+  padding: var(--space-20) 0 var(--space-16);
+  overflow: hidden;
+  /* fallback gradient when image missing */
+  background: linear-gradient(120deg, #0D2340 0%, #16335a 55%, #234b78 100%);
+}
+
+.banner-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.banner-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(13, 35, 64, 0.82) 0%,
+    rgba(13, 35, 64, 0.55) 45%,
+    rgba(13, 35, 64, 0.2) 100%
+  );
+}
+
+.banner-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-hero__content {
+  max-width: 640px;
+}
+
+.banner-hero__eyebrow {
+  color: var(--color-yellow);
+  margin-bottom: var(--space-4);
+}
+
+.banner-hero__title {
+  font-size: var(--text-display-2-size);
+  line-height: var(--text-display-2-lh);
+  letter-spacing: var(--text-display-2-ls);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--space-4);
+}
+
+.banner-hero__desc {
+  font-size: var(--text-body-lg-size);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.banner-hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-5);
+  transform: translateX(-50%);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  animation: bannerScrollBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bannerScrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 767px) {
+  .banner-hero {
+    min-height: 360px;
+    padding: var(--space-16) 0 var(--space-12);
+    align-items: flex-end;
+  }
+  .banner-hero__scrim {
+    background: linear-gradient(
+      0deg,
+      rgba(13, 35, 64, 0.88) 0%,
+      rgba(13, 35, 64, 0.45) 70%,
+      rgba(13, 35, 64, 0.35) 100%
+    );
+  }
+  .banner-hero__title {
+    font-size: var(--text-h1-size);
+  }
+  .banner-hero__desc {
+    font-size: var(--text-body-size);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-hero__scroll { animation: none; }
+}

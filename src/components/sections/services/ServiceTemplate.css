@@ -1,0 +1,306 @@
+/* ─── Shared service page template ─── */
+.sv-label {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.sv-head {
+  max-width: 640px;
+  margin-bottom: var(--space-10);
+}
+.sv-head--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.sv-sub {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-3);
+}
+
+/* ① Points */
+.sv-points__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.sv-point-card {
+  padding: var(--space-6);
+  background-color: var(--color-bg-subtle);
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sv-point-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.sv-point-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 211, 90, 0.25);
+  color: var(--color-navy);
+  margin-bottom: var(--space-4);
+}
+
+.sv-point-card__label {
+  margin-bottom: var(--space-2);
+}
+
+.sv-point-card__desc {
+  font-size: var(--text-body-sm-size);
+  color: var(--color-text-secondary);
+}
+
+/* ② Flow — connected timeline (no-border) */
+.sv-flow__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.sv-flow-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-rows: auto auto;
+  align-items: start;
+  column-gap: var(--space-4);
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.sv-flow-step__num { grid-column: 1; grid-row: 1 / span 2; }
+.sv-flow-step__title { grid-column: 2; grid-row: 1; }
+.sv-flow-step__desc { grid-column: 2; grid-row: 2; }
+
+/* vertical connector to next step (mobile) */
+.sv-flow-step::after {
+  content: '';
+  position: absolute;
+  top: 56px;
+  left: 27px;
+  width: 2px;
+  height: calc(100% + var(--space-8) - 56px);
+  background: linear-gradient(to bottom, var(--color-yellow), rgba(255, 211, 90, 0.25));
+  z-index: 0;
+}
+.sv-flow-step:last-child::after { display: none; }
+
+.sv-flow-step__num {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+  color: var(--color-navy);
+  font-size: var(--text-h4-size);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255, 211, 90, 0.4);
+}
+
+.sv-flow-step__title {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.sv-flow-step__desc {
+  font-size: var(--text-body-sm-size);
+  color: var(--color-text-secondary);
+}
+
+/* ④ House type links — image-led cards */
+.sv-types__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.sv-type-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(150deg, var(--color-navy), #1b3a5c);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sv-type-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.sv-type-card__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.sv-type-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sv-type-card:hover .sv-type-card__media img {
+  transform: scale(1.06);
+}
+
+.sv-type-card__media .sv-type-card__icon {
+  position: absolute;
+  top: var(--space-5);
+  left: var(--space-5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  color: #fff;
+}
+
+/* bottom legibility gradient */
+.sv-type-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(13, 35, 64, 0.85) 0%, rgba(13, 35, 64, 0.35) 45%, transparent 75%);
+}
+
+.sv-type-card__overlay {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-6);
+  color: #fff;
+}
+
+.sv-type-card__title {
+  margin-bottom: var(--space-1);
+  color: #fff;
+}
+
+.sv-type-card__desc {
+  font-size: var(--text-body-sm-size);
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: var(--space-3);
+}
+
+.sv-type-card__arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-body-sm-size);
+  font-weight: 600;
+  color: var(--color-yellow);
+  transition: gap var(--transition-base);
+}
+
+.sv-type-card:hover .sv-type-card__arrow {
+  gap: var(--space-3);
+}
+
+/* ③ Report */
+.sv-report__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.sv-report__desc {
+  color: var(--color-text-secondary);
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.sv-report__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sv-report__list li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-size: var(--text-body-sm-size);
+}
+
+.sv-report__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+}
+
+.sv-report__slider {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.sv-report__img {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.sv-report__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── Desktop ─── */
+@media (min-width: 768px) {
+  .sv-points__grid { grid-template-columns: repeat(3, 1fr); }
+  .sv-types__grid { grid-template-columns: repeat(3, 1fr); }
+  .sv-report__inner { grid-template-columns: 1fr 1fr; gap: var(--space-12); }
+
+  /* ② Flow becomes a horizontal connected timeline */
+  .sv-flow__grid {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+  .sv-flow-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  /* horizontal connector to next step */
+  .sv-flow-step::after {
+    top: 27px;
+    left: calc(50% + 28px);
+    width: calc(100% - 56px + var(--space-4));
+    height: 2px;
+    background: linear-gradient(to right, var(--color-yellow), rgba(255, 211, 90, 0.25));
+  }
+  .sv-flow-step__title { margin-top: var(--space-5); }
+}

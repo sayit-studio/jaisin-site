@@ -1,0 +1,28 @@
+.hero{position:relative;min-height:100svh;overflow:hidden;background:#cfc5b8;color:#f4efe7;isolation:isolate}
+.hero__visual,.hero__backdrops,.hero__backdrops picture,.hero__visual img,.hero__visual i{position:absolute;inset:0;width:100%;height:100%}
+.hero__visual{z-index:-1;opacity:0}.hero__visual::after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:#f6f2ea;opacity:0;animation:heroWhiteFade 21s ease-in-out infinite}.hero__backdrops{display:block}.hero__backdrops picture{display:block;opacity:0;animation:heroBackdrop 21s ease-in-out infinite}.hero__backdrops picture:nth-child(2),.hero__backdrops picture:nth-child(2) img{animation-delay:7s}.hero__backdrops picture:nth-child(3),.hero__backdrops picture:nth-child(3) img{animation-delay:14s}.hero__visual img{display:block;object-fit:cover;object-position:center;scale:1.045;filter:blur(5px);animation:heroBackdropZoom 21s ease-out infinite}@keyframes heroBackdrop{0%,27%{opacity:1}32%,95%{opacity:0}100%{opacity:1}}@keyframes heroBackdropZoom{0%{transform:scale(1.015)}32%{transform:scale(1.1)}100%{transform:scale(1.1)}}@keyframes heroWhiteFade{0%,27%,35%,60%,68%,93%,100%{opacity:0}30%,63%,96%{opacity:.88}}
+.hero__visual i{background:linear-gradient(90deg,rgba(15,19,21,.18),rgba(15,19,21,.04) 50%,rgba(15,19,21,.16))}
+.hero__opening{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;padding:clamp(72px,9vh,110px) clamp(20px,5vw,80px) clamp(32px,5vh,64px);gap:30px;opacity:0;transform:translateY(14px);pointer-events:none}
+.hero__unit{display:block;will-change:transform}
+.hero__unit--zhai{margin-right:calc(-1 * min(4.5vw,55px))}
+.hero__unit--xin{margin-left:calc(-1 * min(4.5vw,55px))}
+.hero__unit img{display:block;width:auto;height:clamp(280px,56svh,500px);max-width:min(18vw,220px);object-fit:contain;filter:drop-shadow(0 12px 24px rgba(8,18,25,.42)) drop-shadow(0 2px 5px rgba(8,18,25,.3))}
+
+.hero__statement{position:absolute;z-index:1;left:clamp(28px,7vw,112px);top:73%;bottom:auto;max-width:min(760px,78vw);margin:0;opacity:0;transform:translateY(16px);color:#f4efe7;font-family:var(--font-serif-tc);font-size:clamp(32px,3.8vw,58px);font-weight:400;line-height:1.5;letter-spacing:.12em;text-shadow:0 2px 22px rgba(0,0,0,.3)}
+.hero__statement span{white-space:nowrap}
+@media(max-width:767px){
+ .hero__visual img{object-position:center;scale:1.04}.hero__visual i{background:linear-gradient(180deg,rgba(12,16,18,.16),rgba(12,16,18,.02) 50%,rgba(12,16,18,.3))}
+ .hero__opening{align-items:center;padding:104px 18px 24px;gap:clamp(14px,5vw,28px)}
+ .hero__unit--zhai{margin-right:calc(-1 * min(10vw,42px))}
+ .hero__unit--xin{margin-left:calc(-1 * min(10vw,42px))}
+ .hero__unit{display:block;will-change:transform}.hero__unit img{display:block;width:auto;height:clamp(280px,56svh,500px);max-width:min(18vw,220px);object-fit:contain;filter:drop-shadow(0 12px 24px rgba(8,18,25,.42)) drop-shadow(0 2px 5px rgba(8,18,25,.3))}
+ 
+ .hero__unit img{height:min(43svh,350px);width:auto;max-width:40vw}.hero__statement{left:14vw;right:auto;top:18svh;bottom:auto;max-width:none;font-family:var(--font-serif-tc);font-size:clamp(26px,7.4vw,34px);font-weight:400;line-height:1.8;letter-spacing:.16em;writing-mode:vertical-rl}
+ .hero .next-section-cue{z-index:6;bottom:max(64px,calc(env(safe-area-inset-bottom) + 42px));padding:8px;color:#fff}
+ .hero .next-section-cue__label{text-shadow:0 1px 6px rgba(0,0,0,.55)}
+ .hero .next-section-cue__arrow{height:18px}
+}
+@media(max-height:520px) and (orientation:landscape){
+ .hero__opening{padding:54px 18px 18px;gap:24px}.hero__unit img{height:min(58svh,220px);max-width:22vw}.hero__statement{left:5vw;right:auto;top:auto;bottom:24px;font-size:clamp(20px,3.4vw,32px);line-height:1.45;letter-spacing:.1em;writing-mode:horizontal-tb}.hero .next-section-cue{right:4vw;left:auto;bottom:max(10px,env(safe-area-inset-bottom));translate:0 0}.hero .next-section-cue:hover,.hero .next-section-cue:focus-visible{translate:0 3px}
+}
+@media(prefers-reduced-motion:reduce){.hero__visual,.hero__statement{opacity:1}.hero__visual::after{animation:none;display:none}.hero__backdrops picture,.hero__backdrops picture img{animation:none}.hero__backdrops picture{opacity:0}.hero__backdrops picture:first-child{opacity:1}.hero__visual img{scale:1;filter:none}.hero__opening{display:none}.hero__statement{transform:none}}

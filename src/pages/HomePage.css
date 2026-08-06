@@ -1,0 +1,370 @@
+html.home-pager-mode,
+body.home-pager-mode {
+  overscroll-behavior-y: none;
+  scroll-behavior: auto;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0;
+}
+
+.home-page > section {
+  position: relative;
+  width: 100%;
+  height: var(--home-viewport-height, 100svh);
+  min-height: var(--home-viewport-height, 100svh);
+  max-height: var(--home-viewport-height, 100svh);
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.home-page > .home-section:not(.hero) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(52px, 8vh, var(--section-padding-y));
+  padding-bottom: clamp(84px, 12vh, 124px);
+}
+
+.home-page > #home-final-cta {
+  padding-bottom: clamp(52px, 8vh, var(--section-padding-y));
+}
+
+@media (max-height: 819px) {
+  .home-page > .home-section:not(.hero) {
+    padding-top: clamp(34px, 6vh, 56px);
+    padding-bottom: clamp(64px, 10vh, 84px);
+  }
+
+  .home-page > #home-final-cta {
+    padding-bottom: clamp(34px, 6vh, 56px);
+  }
+}
+
+@media (max-width: 767px) {
+  .home-page > .home-section:not(.hero) {
+    padding-top: clamp(28px, 5.5vh, 48px);
+    padding-bottom: clamp(62px, 10vh, 82px);
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .home-page > .home-section:not(.hero) {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.home-pager-mode,
+  body.home-pager-mode {
+    scroll-behavior: auto;
+  }
+}
+
+/* Homepage section-heading system */
+.inspection-section__header,
+.how-we-work__header,
+.report-value__header,
+.reviews-section__header,
+.home-faq__header,
+.quick-access__header {
+  width: 100%;
+  text-align: center;
+}
+
+.inspection-section__title,
+.how-we-work__title,
+.report-value__title,
+.reviews-section__title,
+.home-faq__title,
+.quick-access__header .text-h2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.inspection-section__sub,
+.report-value__desc,
+.reviews-section__sub,
+.home-faq__sub,
+.quick-access__intro {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.home-faq__inner {
+  align-items: center;
+}
+
+.home-faq__header {
+  flex: none;
+  max-width: 680px;
+  position: static;
+}
+
+.home-faq__accordion {
+  width: min(100%, 900px);
+}
+/* Shared homepage heading baseline: every section begins from the same visual row. */
+.home-page > .home-section:not(.hero) {
+  --home-heading-slot: clamp(104px,14vh,132px);
+  justify-content: flex-start;
+}
+
+.pain-points__header,
+.inspection-section__header,
+.how-we-work__header,
+.report-value__header,
+.reviews-section__head,
+.home-faq__header,
+.quick-access__header {
+  display: flex;
+  width: 100%;
+  height: var(--home-heading-slot);
+  flex: 0 0 var(--home-heading-slot);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  text-align: center;
+}
+
+.pain-points__title,
+.inspection-section__title,
+.how-we-work__title,
+.report-value__title,
+.reviews-section__title,
+.home-faq__title,
+.quick-access__header .text-h2 {
+  margin-top: 0;
+}
+
+@media (max-width:767px) {
+  .home-page > .home-section:not(.hero) {
+    --home-heading-slot: 118px;
+    padding-top: 28px;
+  }
+
+  .report-value .container {
+    padding-top: 0;
+  }
+
+  .pain-points__header,
+  .inspection-section__header,
+  .how-we-work__header,
+  .report-value__header,
+  .reviews-section__head,
+  .home-faq__header,
+  .quick-access__header {
+    height: var(--home-heading-slot);
+    min-height: var(--home-heading-slot);
+  }
+}
+
+@media (max-height:680px) and (max-width:767px) {
+  .home-page > .home-section:not(.hero) {
+    --home-heading-slot: 100px;
+    padding-top: 18px;
+  }
+}
+/* New homepage sections share the same heading baseline. */
+.home-seminar__header,
+.service-types__header {
+  display:flex;
+  width:100%;
+  height:var(--home-heading-slot);
+  flex:0 0 var(--home-heading-slot);
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  margin:0 !important;
+  text-align:center;
+}
+.home-seminar__title,
+.service-types__title {
+  margin:0 auto;
+  text-align:center;
+}
+@media(max-width:767px){
+  .home-seminar__header,
+  .service-types__header {
+    height:var(--home-heading-slot);
+    min-height:var(--home-heading-slot);
+  }
+}
+/* Viewport-safe homepage layout: navbar + heading + content + next cue always fit. */
+.home-page > .home-section:not(.hero) {
+  --home-top-safe: 92px;
+  --home-bottom-safe: 76px;
+  --home-heading-slot: 96px;
+  --home-content-height: calc(var(--home-viewport-height,100svh) - var(--home-top-safe) - var(--home-bottom-safe) - var(--home-heading-slot));
+  box-sizing: border-box;
+  justify-content: flex-start;
+  padding-top: var(--home-top-safe) !important;
+  padding-bottom: var(--home-bottom-safe) !important;
+}
+
+.pain-points__header,
+.inspection-section__header,
+.how-we-work__header,
+.report-value__header,
+.home-seminar__header,
+.service-types__header,
+.reviews-section__head,
+.home-faq__header,
+.quick-access__header {
+  height: var(--home-heading-slot) !important;
+  min-height: var(--home-heading-slot) !important;
+  flex-basis: var(--home-heading-slot) !important;
+  overflow: visible;
+}
+
+.pain-points__title,
+.inspection-section__title,
+.how-we-work__title,
+.report-value__title,
+.home-seminar__title,
+.service-types__title,
+.reviews-section__title,
+.home-faq__title,
+.quick-access__header .text-h2 {
+  width: 100%;
+  max-width: min(92vw,900px);
+  overflow: visible;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.story__stage,
+.report-map,
+.home-seminar__feature,
+.service-types__content,
+.reviews-deck {
+  height: var(--home-content-height) !important;
+  max-height: var(--home-content-height) !important;
+}
+
+.pain-points__grid,
+.inspection-section__grid,
+.home-faq__accordion,
+.quick-access__grid {
+  max-height: var(--home-content-height);
+}
+
+@media(max-width:767px){
+  .home-page > .home-section:not(.hero) {
+    --home-top-safe: 82px;
+    --home-bottom-safe: 68px;
+    --home-heading-slot: 92px;
+  }
+  .pain-points__title,
+  .inspection-section__title,
+  .how-we-work__title,
+  .report-value__title,
+  .home-seminar__title,
+  .service-types__title,
+  .reviews-section__title,
+  .home-faq__title,
+  .quick-access__header .text-h2 {
+    max-width: calc(100vw - 36px);
+    margin-inline:auto;
+    font-size:clamp(21px,6vw,26px);
+    line-height:1.42;
+  }
+  .report-value__highlight { font-size:1em; }
+}
+
+@media(max-height:680px){
+  .home-page > .home-section:not(.hero) {
+    --home-top-safe: 72px;
+    --home-bottom-safe: 54px;
+    --home-heading-slot: 78px;
+  }
+}
+
+@media(max-height:580px){
+  .home-page > .home-section:not(.hero) {
+    --home-top-safe: 64px;
+    --home-bottom-safe: 46px;
+    --home-heading-slot: 68px;
+  }
+  .pain-points__title,
+  .inspection-section__title,
+  .how-we-work__title,
+  .report-value__title,
+  .home-seminar__title,
+  .service-types__title,
+  .reviews-section__title,
+  .home-faq__title,
+  .quick-access__header .text-h2 {
+    font-size:clamp(19px,5.2vw,23px);
+    line-height:1.3;
+  }
+}
+/* Final unified homepage title scale and protected content area. */
+.home-page > .home-section:not(.hero) {
+  --home-top-safe: 94px;
+  --home-bottom-safe: 88px;
+  --home-heading-slot: 94px;
+}
+
+.pain-points__title,
+.inspection-section__title,
+.how-we-work__title,
+.report-value__title,
+.home-seminar__title,
+.service-types__title,
+.reviews-section__title,
+.home-faq__title,
+.quick-access__header .text-h2 {
+  margin:0 auto !important;
+  padding:0 !important;
+  font-size:36px !important;
+  line-height:1.35 !important;
+  letter-spacing:-.015em !important;
+}
+
+@media(max-width:767px){
+  .home-page > .home-section:not(.hero) {
+    --home-top-safe: 80px;
+    --home-bottom-safe: 100px;
+    --home-heading-slot: 78px;
+  }
+  .pain-points__title,
+  .inspection-section__title,
+  .how-we-work__title,
+  .report-value__title,
+  .home-seminar__title,
+  .service-types__title,
+  .reviews-section__title,
+  .home-faq__title,
+  .quick-access__header .text-h2 {
+    font-size:24px !important;
+    line-height:1.38 !important;
+  }
+  .pain-points__title::after { bottom:-10px; }
+}
+
+@media(max-width:360px){
+  .pain-points__title,
+  .inspection-section__title,
+  .how-we-work__title,
+  .report-value__title,
+  .home-seminar__title,
+  .service-types__title,
+  .reviews-section__title,
+  .home-faq__title,
+  .quick-access__header .text-h2 {
+    font-size:22px !important;
+  }
+}
+
+@media(max-height:680px){
+  .home-page > .home-section:not(.hero) {
+    --home-top-safe: 70px;
+    --home-bottom-safe: 78px;
+    --home-heading-slot: 68px;
+  }
+}

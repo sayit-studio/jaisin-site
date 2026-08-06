@@ -1,0 +1,314 @@
+/* ============================================
+   SeminarPage.css
+   ============================================ */
+
+.seminar-label {
+  margin-bottom: var(--space-3);
+  color: var(--color-navy);
+  opacity: 0.5;
+}
+
+/* ── HERO ────────────────────────────────── */
+.seminar-hero {
+  padding: 144px 0 var(--space-16);
+  color: var(--color-text-inverse);
+  /* 背景圖網址由 JSX 以 --seminar-hero-image 帶入（CSS 無法取用 base path）。 */
+  background:
+    linear-gradient(105deg, rgba(13, 35, 64, 0.98) 0%, rgba(13, 35, 64, 0.90) 58%, rgba(13, 35, 64, 0.75) 100%),
+    var(--seminar-hero-image) center / cover;
+}
+
+.seminar-hero__content {
+  max-width: 840px;
+}
+
+.seminar-hero__eyebrow {
+  margin-bottom: var(--space-5);
+  color: var(--color-yellow);
+}
+
+.seminar-hero__title {
+  /* 移除 max-width 限制，讓文字自然換行為兩行 */
+  color: var(--color-text-inverse);
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.seminar-hero__title span {
+  color: var(--color-yellow);
+}
+
+.seminar-hero__desc {
+  max-width: 42em;
+  margin-top: var(--space-6);
+  color: var(--color-text-inverse-muted);
+  font-size: var(--text-body-lg-size);
+  line-height: 1.8;
+}
+
+.seminar-hero__button {
+  margin-top: var(--space-8);
+}
+
+
+/* ── SECTION HEADING ─────────────────────── */
+.seminar-section-heading {
+  max-width: 640px;
+  margin-bottom: var(--space-10);
+}
+
+.seminar-section-heading > p:last-child {
+  margin-top: var(--space-4);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+
+/* ── TAKEAWAYS SECTION ───────────────────── */
+.seminar-takeaways-section__heading {
+  margin-bottom: var(--space-10);
+}
+
+.seminar-takeaways-section__heading h2 {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
+}
+
+.seminar-takeaways-section__heading p {
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-lg-size);
+  line-height: 1.7;
+}
+
+.seminar-takeaways-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.seminar-takeaway-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-lg-size);
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}
+
+.seminar-takeaway-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-navy);
+}
+
+/* ── SEMINAR NOTES ───────────────────────── */
+.seminar-sessions__notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-5);
+  list-style: none;
+}
+
+.seminar-sessions__notes li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-body-sm-size);
+  color: var(--color-text-secondary);
+}
+
+.seminar-sessions__notes li svg {
+  flex-shrink: 0;
+  color: var(--color-navy);
+  opacity: 0.55;
+}
+
+/* ── SESSION LIST ────────────────────────── */
+.seminar-sessions__layout {
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* Session cards（純資訊展示，不可點選） */
+.seminar-cards {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.seminar-cards__empty {
+  padding: var(--space-6);
+  border: 1.5px dashed var(--color-border-base);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+  line-height: 1.7;
+}
+
+.seminar-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1.5px solid var(--color-border-base);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-base);
+}
+
+/* Date block */
+.seminar-card__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-inverse);
+  background: var(--color-navy);
+  font-size: var(--text-caption-size);
+  gap: 2px;
+}
+
+.seminar-card__date strong {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Content side */
+.seminar-card__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.seminar-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-size);
+}
+
+.seminar-card__meta > span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ── LINE SIGNUP PANEL ───────────────────── */
+.seminar-signup {
+  min-width: 0;
+  align-self: start;
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border-base);
+  background: var(--color-bg-subtle);
+}
+
+.seminar-signup__label {
+  display: block;
+  margin-bottom: var(--space-3);
+  color: var(--color-navy);
+  opacity: 0.5;
+}
+
+.seminar-signup__title {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
+  font-size: var(--text-h4-size);
+  font-weight: var(--weight-semibold);
+  line-height: 1.35;
+}
+
+.seminar-signup__desc {
+  margin-bottom: var(--space-6);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm-size);
+  line-height: 1.75;
+}
+
+.seminar-signup__button {
+  width: 100%;
+}
+
+/* ── Badges ──────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  font-size: var(--text-caption-size);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.badge-navy    { background: var(--color-navy); color: var(--color-text-inverse); }
+.badge-success { background: #E6F2EC; color: var(--color-success); }
+.badge-error   { background: #F0EEE9; color: var(--color-text-muted); }
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (min-width: 768px) {
+  .seminar-takeaways-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seminar-card {
+    grid-template-columns: 96px 1fr;
+    padding: var(--space-5) var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .seminar-hero {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+  }
+
+  .seminar-sessions__layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+    gap: var(--space-8);
+  }
+
+  .seminar-signup {
+    position: sticky;
+    top: 100px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .seminar-hero {
+    padding-top: 112px;
+  }
+
+  .seminar-hero__desc {
+    font-size: var(--text-body-size);
+  }
+
+  .seminar-takeaways {
+    margin-top: var(--space-10);
+    padding: var(--space-5);
+  }
+
+  .seminar-solution-card {
+    padding: var(--space-5) var(--space-5);
+  }
+}

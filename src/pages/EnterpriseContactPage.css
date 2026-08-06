@@ -1,0 +1,115 @@
+.enterprise-page {
+  padding-top: calc(72px + var(--space-12));
+  padding-bottom: var(--space-16);
+}
+
+.enterprise-page__inner {
+  max-width: 720px;
+}
+
+.enterprise-label {
+  color: var(--color-navy);
+  opacity: 0.5;
+  margin-bottom: var(--space-3);
+}
+
+.enterprise-page__header {
+  margin-bottom: var(--space-10);
+}
+
+.enterprise-page__sub {
+  margin-top: var(--space-4);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  color: var(--color-text-secondary);
+}
+
+/* Form */
+.enterprise-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.enterprise-form__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-lg);
+}
+
+.enterprise-form__section-title {
+  font-size: var(--text-body-size);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.enterprise-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.enterprise-form__error-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background: rgba(197, 48, 48, 0.08);
+  color: var(--color-error);
+  font-size: var(--text-body-sm-size);
+}
+
+.enterprise-form__error-banner a {
+  color: var(--color-error);
+  text-decoration: underline;
+}
+
+.enterprise-form__submit {
+  align-self: flex-start;
+  padding: 16px 36px;
+  font-size: var(--text-body-size);
+}
+
+.enterprise-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Result */
+.enterprise-result {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-5);
+  padding: var(--space-16) var(--section-padding-x);
+}
+
+.enterprise-result__title {
+  font-size: var(--text-h2-size);
+  color: var(--color-text-primary);
+}
+
+.enterprise-result__desc {
+  font-size: var(--text-body-size);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .enterprise-form__row {
+    flex-direction: row;
+  }
+  .enterprise-form__row .form-group {
+    flex: 1;
+  }
+}

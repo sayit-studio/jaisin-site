@@ -1,0 +1,90 @@
+.cta-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.cta-banner__label {
+  color: var(--color-yellow);
+  margin-bottom: var(--space-4);
+}
+
+.cta-banner__title {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-inverse);
+  margin-bottom: var(--space-5);
+}
+
+.cta-banner__desc {
+  font-size: var(--text-body-size);
+  line-height: 1.75;
+  color: var(--color-text-inverse-muted);
+}
+
+.cta-banner__btn {
+  align-self: flex-start;
+  font-size: var(--text-body-lg-size);
+  padding: 16px 32px;
+}
+
+.cta-banner__note {
+  font-size: var(--text-caption-size);
+  color: var(--color-text-inverse-muted);
+  margin-top: var(--space-3);
+}
+
+/* Decorative ping */
+.cta-banner__deco {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+
+.cta-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 211, 90, 0.3);
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@media (min-width: 1024px) {
+  .cta-banner__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-16);
+  }
+
+  .cta-banner__text {
+    flex: 1;
+  }
+
+  .cta-banner__actions {
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .cta-banner__btn {
+    align-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-ping {
+    animation: none;
+  }
+}

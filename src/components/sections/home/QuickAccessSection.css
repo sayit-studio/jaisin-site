@@ -1,0 +1,117 @@
+.quick-access {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.quick-access__header {
+  margin-bottom: var(--space-8);
+}
+
+.quick-access__intro {
+  max-width: 620px;
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+}
+
+.quick-access__eyebrow {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.quick-access__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.quick-access__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-align: center;
+  padding: var(--space-5) var(--space-3);
+  background-color: var(--color-bg-subtle);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
+}
+
+.quick-access__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-bg-base);
+}
+
+.quick-access__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background-color: rgba(13, 35, 64, 0.06);
+  color: var(--color-navy);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.quick-access__item:hover .quick-access__icon {
+  background-color: var(--color-navy);
+  color: var(--color-text-inverse);
+}
+
+.quick-access__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quick-access__label {
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.quick-access__sub {
+  font-size: var(--text-caption-size);
+  color: var(--color-text-muted);
+}
+
+/* Accent (primary action) */
+.quick-access__item--accent {
+  background-color: var(--color-yellow);
+}
+.quick-access__item--accent .quick-access__icon {
+  background-color: rgba(13, 35, 64, 0.12);
+}
+.quick-access__item--accent:hover {
+  background-color: var(--color-yellow);
+}
+.quick-access__item--accent:hover .quick-access__icon {
+  background-color: var(--color-navy);
+  color: var(--color-yellow);
+}
+
+/* ─── Desktop: horizontal quick bar ─── */
+@media (min-width: 768px) {
+  .quick-access {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+  .quick-access__grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-3);
+  }
+  .quick-access__item {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+  .quick-access__icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+}
