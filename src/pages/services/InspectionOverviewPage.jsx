@@ -19,8 +19,8 @@ const INSPECTION = {
   },
   header: {
     eyebrow: '專業驗屋',
-    title: '專業驗屋，看清真實屋況',
-    desc: '儀器檢測、完整紀錄，留下交屋修繕依據。',
+    title: '看清真實屋況，交屋更放心',
+    desc: '專業儀器檢測、完整驗屋報告、留下交屋修繕依據',
   },
   points: {
     label: '驗屋講解重點',

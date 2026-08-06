@@ -78,8 +78,8 @@ export default function GroupPage() {
 
       <PageHeader
         eyebrow="社區團購驗屋"
-        title="社區一起驗，更有力量"
-        desc="統一排程、獨立報告，讓交屋溝通更有效率。"
+        title="家的社區大家來守護"
+        desc="一戶即享團購價，結合社區力量一起把關"
         image={asset('assets/banners/group-desktop.webp')}
         mobileImage={asset('assets/banners/group-mobile.webp')}
       />

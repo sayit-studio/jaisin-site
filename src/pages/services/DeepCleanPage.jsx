@@ -14,8 +14,8 @@ const DEEP_CLEAN = {
   },
   header: {
     eyebrow: '裝潢細清',
-    title: '入住前，把細節清乾淨',
-    desc: '清除裝修粉塵與角落髒污，讓新家安心入住。',
+    title: '新家，就該一塵不染的開始',
+    desc: '細節顧到了，放心就到位了',
   },
   points: {
     label: '服務重點',

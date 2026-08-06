@@ -14,8 +14,8 @@ const RENOVATION = {
   },
   header: {
     eyebrow: '全屋整裝',
-    title: '從屋況到整裝，一次整合',
-    desc: '整合規劃、施工與驗收，讓裝修更安心。',
+    title: '放心，從交給對的人開始',
+    desc: '一站式服務：規劃、施工、驗收',
   },
   points: {
     label: '服務重點',

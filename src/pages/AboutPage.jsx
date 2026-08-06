@@ -97,8 +97,8 @@ export default function AboutPage() {
 
       <PageHeader
         eyebrow="關於宅心驗屋"
-        title="比你更在乎家的細節。"
-        desc="用專業與完整紀錄，守護家的每個細節。"
+        title="家，值得被好好對待"
+        desc="宅心用專業陪你顧好，交屋這一路的每個細節"
         image={asset('assets/banners/about-desktop.webp')}
         mobileImage={asset('assets/banners/about-mobile.webp')}
       />

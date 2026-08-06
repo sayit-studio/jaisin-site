@@ -72,8 +72,8 @@ export default function SeminarPage() {
         <div className="container seminar-hero__inner">
           <div className="seminar-hero__content">
             <p className="text-label seminar-hero__eyebrow">宅心驗屋說明會</p>
-            <h1 className="seminar-hero__title">交屋前，先懂驗屋</h1>
-            <p className="seminar-hero__desc">一次了解流程、報告與交屋溝通重點。</p>
+            <h1 className="seminar-hero__title">認識驗屋從這邊開始</h1>
+            <p className="seminar-hero__desc">40分鐘掌握驗屋流程、報告與溝通重點</p>
             <a href="#seminar-sessions" className="btn btn-primary seminar-hero__button">
               <CalendarDays size={18} />查看近期場次
             </a>

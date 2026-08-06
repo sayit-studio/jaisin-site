@@ -67,3 +67,22 @@
   .page-header__title { max-width: none; font-size: clamp(2rem, 10vw, 3rem); }
   .page-header__desc { max-width: 30ch; margin-top: var(--space-4); font-size: var(--text-body-size); }
 }
+/* Keep approved banner copy on one complete line across devices. */
+.page-header__title,
+.page-header__desc {
+  max-width: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .page-header__title {
+    font-size: clamp(1.25rem, 5.8vw, 2.75rem);
+    letter-spacing: -0.035em;
+  }
+
+  .page-header__desc {
+    max-width: none;
+    font-size: clamp(0.68rem, 3.25vw, 1rem);
+    letter-spacing: -0.025em;
+  }
+}

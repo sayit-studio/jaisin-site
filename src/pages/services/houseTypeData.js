@@ -18,8 +18,8 @@ export const NEW_HOME = {
   },
   header: {
     eyebrow: '新成屋驗屋｜專業驗屋公司',
-    title: '交屋前，看清房屋狀況',
-    desc: '儀器檢測、完整紀錄，讓新屋交付更安心。',
+    title: '把關最後一哩路',
+    desc: '交屋前完整檢測，把關新家的每一份用心',
   },
   intro: {
     label: '新成屋驗屋重點',
@@ -79,7 +79,7 @@ export const NEW_HOME = {
 export const USED_HOME = {
   routeKey: 'service-used-home',
   seo: {
-    title: '中古屋驗屋服務｜買房前，看清真實屋況 — 宅心驗屋',
+    title: '中古屋驗屋服務｜入住前，了解真實屋況 — 宅心驗屋',
     description: '宅心驗屋中古屋服務，協助看屋、議價或簽約前確認屋況。檢視漏水痕跡、管線、用電、排水與牆地狀態，提供可觀察與可檢測的屋況線索。',
     ogImage: asset('assets/og/og-used-home.jpg'),
   },
@@ -89,8 +89,8 @@ export const USED_HOME = {
   },
   header: {
     eyebrow: '中古屋驗屋',
-    title: '買房前，看清真實屋況',
-    desc: '確認漏水、管線與用電，讓買房決定更有依據。',
+    title: '入住前，了解真實屋況',
+    desc: '檢查漏水、管線、用電，讓決定更有依據',
   },
   intro: {
     label: '中古屋檢測重點',
@@ -159,8 +159,8 @@ export const TOWNHOUSE = {
   },
   header: {
     eyebrow: '透天別墅驗屋',
-    title: '透天驗屋，逐層把關',
-    desc: '從頂樓到各層管線，完整確認整棟屋況。',
+    title: '透天驗屋更全面',
+    desc: '逐層把關守護全家人的生活',
   },
   intro: {
     label: '透天檢測重點',

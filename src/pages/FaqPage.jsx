@@ -110,8 +110,8 @@ export default function FaqPage() {
 
       <PageHeader
         eyebrow="常見問題 / FAQ"
-        title="屋主最常問的問題"
-        desc="快速找到驗屋、費用與報告相關答案。"
+        title="你想知道的，我們都準備好了"
+        desc="驗屋流程、費用、報告，一次看懂"
         image={asset('assets/banners/faq-desktop.webp')}
         mobileImage={asset('assets/banners/faq-mobile.webp')}
       />
