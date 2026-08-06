@@ -28,6 +28,7 @@ export default function Footer() {
         <nav className="footer__links" aria-label="頁尾導覽">
           <Link to="/about">關於宅心</Link>
           <Link to="/faq">常見問題</Link>
+          <Link to="/cooperation">合作洽詢</Link>
           <Link to="/privacy">隱私政策</Link>
         </nav>
       </div>

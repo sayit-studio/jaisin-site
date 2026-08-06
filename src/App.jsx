@@ -1,4 +1,4 @@
-﻿import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import Layout from './components/layout/Layout'
 import { BASE } from './config/site'
@@ -35,6 +35,7 @@ export function SiteRoutes() {
             <Route path="services/group"      element={<GroupPage />} />
             <Route path="faq"                 element={<FaqPage />} />
             <Route path="privacy"             element={<PrivacyPage />} />
+            <Route path="cooperation"         element={<EnterpriseContactPage />} />
             <Route path="contact-enterprise"  element={<EnterpriseContactPage />} />
             <Route path="*"                   element={<NotFoundPage />} />
           </Route>

@@ -21,6 +21,7 @@ const routes = [
   '/services/renovation',
   '/faq',
   '/privacy',
+  '/cooperation',
   '/contact-enterprise',
   '/404',
 ]

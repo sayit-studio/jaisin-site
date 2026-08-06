@@ -26,6 +26,7 @@ const navItems = [
   { label: '關於宅心', to: '/about' },
   { label: '驗屋說明會', to: '/seminar' },
   { label: '常見問題', to: '/faq' },
+  { label: '合作洽詢', to: '/cooperation' },
 ]
 
 export default function Navbar() {
