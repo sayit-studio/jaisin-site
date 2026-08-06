@@ -133,3 +133,13 @@
 @media (prefers-reduced-motion: reduce) {
   .faq-page__list { animation: none; }
 }
+/* Horizontal FAQ page tabs */
+.faq-page__tab-nav { display:grid; grid-template-columns:42px minmax(0,1fr) 42px; align-items:center; gap:12px; margin-bottom:var(--space-10); }
+.faq-page__tab-nav .faq-page__tabs { display:flex; grid-template-columns:none; gap:0; overflow-x:auto; scrollbar-width:none; border-bottom:1px solid var(--color-border-base); scroll-behavior:smooth; margin-bottom:0; }
+.faq-page__tab-nav .faq-page__tabs::-webkit-scrollbar { display:none; }
+.faq-page__tab-nav .faq-page__tab { flex:0 0 auto; min-width:118px; min-height:auto; justify-content:center; padding:15px 18px; border:0; border-bottom:3px solid transparent; border-radius:0; background:transparent; text-align:center; white-space:nowrap; box-shadow:none; transform:none; }
+.faq-page__tab-nav .faq-page__tab:hover { color:var(--color-navy); background:var(--color-bg-subtle); transform:none; box-shadow:none; }
+.faq-page__tab-nav .faq-page__tab.is-active { color:var(--color-navy); border-bottom-color:var(--color-yellow); background:rgba(255,205,71,.12); box-shadow:none; }
+.faq-page__tab-arrow { width:42px; height:42px; display:grid; place-items:center; border:1px solid var(--color-border-base); border-radius:50%; color:var(--color-navy); background:var(--color-bg-base); }
+.faq-page__tab-arrow:hover { color:var(--color-text-inverse); border-color:var(--color-navy); background:var(--color-navy); }
+@media (max-width:480px) { .faq-page__tab-nav { grid-template-columns:36px minmax(0,1fr) 36px; gap:6px; margin-bottom:var(--space-8); } .faq-page__tab-arrow { width:36px; height:36px; } .faq-page__tab-nav .faq-page__tab { min-width:104px; padding:13px 14px; font-size:.88rem; } }
