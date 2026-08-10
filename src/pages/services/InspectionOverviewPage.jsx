@@ -30,7 +30,7 @@ const INSPECTION = {
       { icon: Droplets, label: '窗框與門窗', desc: '密合度、防水嵌縫、開闔順暢與五金，雨天滲水的第一道關卡。' },
       { icon: ArrowDownToLine, label: '排水與管線', desc: '各區域泄水坡度、水流測試與管線異常，降低入住後維修風險。' },
       { icon: Thermometer, label: '熱顯像檢測', desc: 'FLIR 熱顯像儀偵測牆面溫差，揭示潛在漏水與水氣累積。' },
-      { icon: Ruler, label: '水平與結構', desc: '地板水平、牆面垂直、磁磚空鼓與批土龜裂，確認施工品質。' },
+      { icon: Ruler, label: '水平與牆面', desc: '地板水平、牆面垂直、磁磚空心與批土龜裂，確認施工品質。' },
       { icon: Zap, label: '用電與安全', desc: '插座極性、接地、線路負載與弱電，電氣安全全面確認。' },
       { icon: FileText, label: '報告與溝通', desc: '照片、位置、建議完整成冊，每個發現都有清楚的交涉依據。' },
     ],

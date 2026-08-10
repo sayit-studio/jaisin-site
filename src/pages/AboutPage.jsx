@@ -59,7 +59,7 @@ const TEAM = [
     role: '現場驗屋師',
     bio: '土木背景出身，對泄水坡度與管線走向特別敏銳。每份報告裡的每一條線，都是幫屋主說清楚的依據。',
     photo: asset('assets/team/inspector-sub-sample.png'),
-    tags: ['結構判讀', '排水系統', '中古屋屋況評估'],
+    tags: ['屋況判讀', '排水系統', '中古屋屋況評估'],
   },
   {
     name: '陳志遠',
