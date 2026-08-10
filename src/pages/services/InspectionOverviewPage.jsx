@@ -28,7 +28,7 @@ const INSPECTION = {
     sub: '系統性儀器輔助，逐項記錄，不靠印象判斷。',
     items: [
       { icon: Droplets, label: '窗框與門窗', desc: '密合度、防水嵌縫、開闔順暢與五金，雨天滲水的第一道關卡。' },
-      { icon: ArrowDownToLine, label: '排水與管線', desc: '各區域排水坡度、水流測試與管線異常，降低入住後維修風險。' },
+      { icon: ArrowDownToLine, label: '排水與管線', desc: '各區域泄水坡度、水流測試與管線異常，降低入住後維修風險。' },
       { icon: Thermometer, label: '熱顯像檢測', desc: 'FLIR 熱顯像儀偵測牆面溫差，揭示潛在漏水與水氣累積。' },
       { icon: Ruler, label: '水平與結構', desc: '地板水平、牆面垂直、磁磚空鼓與批土龜裂，確認施工品質。' },
       { icon: Zap, label: '用電與安全', desc: '插座極性、接地、線路負載與弱電，電氣安全全面確認。' },
@@ -42,8 +42,8 @@ const INSPECTION = {
       { num: '01', title: 'LINE 諮詢', desc: '提供物件資訊、坪數與時程。' },
       { num: '02', title: '確認排程', desc: '確認日期、時段與服務範圍。' },
       { num: '03', title: '現場檢測', desc: '依項目逐區檢測與拍照紀錄。' },
-      { num: '04', title: '完整報告', desc: '整理缺失照片、位置與說明。' },
-      { num: '05', title: '報告說明', desc: '說明重點與後續交涉方向。' },
+      { num: '04', title: '當天解說', desc: '驗屋當天現場說明所有缺失。' },
+      { num: '05', title: '完整報告', desc: '缺失照片、位置與交涉依據。' },
     ],
   },
   report: {

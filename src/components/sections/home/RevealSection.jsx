@@ -7,7 +7,7 @@ const TOOLS = [
   { icon: Thermometer, name: '熱顯像儀', desc: '判斷牆面、窗框溫差與潛在水氣。' },
   { icon: Ruler, name: '雷射測距儀', desc: '確認空間尺寸與牆面距離，降低目測誤差。' },
   { icon: Plug, name: '插座測試器', desc: '檢測極性、接地與基本用電狀態。' },
-  { icon: Waves, name: '排水檢測工具', desc: '檢查排水坡度與水流，降低維修風險。' },
+  { icon: Waves, name: '排水檢測工具', desc: '檢查泄水坡度與水流，降低維修風險。' },
 ]
 
 export default function RevealSection() {

@@ -11,7 +11,7 @@ const HOUSE_TYPES = [
     banner: asset('assets/house-types/new-home-banner.webp'),
     title: '新成屋驗屋',
     hook: '交屋前的最後一道把關',
-    desc: '窗框防水、排水坡度、熱顯像、用電全面檢測，交屋前找出缺失，與建商交涉有憑有據。',
+    desc: '窗框防水、泄水坡度、熱顯像、用電全面檢測，交屋前找出缺失，與建商交涉有憑有據。',
     points: ['六大常見缺失檢測', '熱顯像儀器輔助', '完整圖像化報告'],
     cta: '了解新成屋驗屋',
     to: '/services/new-home',
