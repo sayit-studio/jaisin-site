@@ -25,7 +25,8 @@
 .cooperation-type-card p { max-width: 30ch; margin: var(--space-3) auto 0; color: var(--color-text-secondary); font-size: var(--text-body-sm-size); line-height: 1.75; }
 
 .cooperation-line { max-width: 760px; margin: var(--space-12) auto 0; padding: clamp(30px, 5vw, 54px); border-radius: var(--radius-lg); color: var(--color-text-inverse); background: var(--color-navy); text-align: center; }
-.cooperation-line h2 { font-size: var(--text-h3-size); }
+/* 深色底卡片：h2 需覆寫 global.css 的 h1–h6 深色字，否則會被壓成深藍看不清 */
+.cooperation-line h2 { font-size: var(--text-h3-size); color: var(--color-text-inverse); }
 .cooperation-line p { margin: var(--space-3) 0 var(--space-6); color: var(--color-text-inverse-muted); }
 .cooperation-line .btn { display: inline-flex; align-items: center; gap: var(--space-2); }
 
