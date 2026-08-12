@@ -12,6 +12,7 @@ export default function BannerHero({
   title,
   desc,
   scrollTo,
+  action,
 }) {
   const handleScroll = () => {
     if (!scrollTo) return
@@ -39,6 +40,7 @@ export default function BannerHero({
         <div className="banner-hero__content">
           <h1 className="banner-hero__title">{title}</h1>
           {desc && <p className="banner-hero__desc">{desc}</p>}
+          {action && <div className="banner-hero__action">{action}</div>}
         </div>
       </div>
 

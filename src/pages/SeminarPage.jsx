@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { CalendarDays, CheckCircle2, MessageCircle } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import Seo from '../components/seo/Seo'
+import BannerHero from '../components/ui/BannerHero'
 import { seminars as localSeminars, filterActiveSeminars } from '../data/seminars'
 import { GA_EVENTS, trackEvent } from '../utils/analytics'
 import { asset } from '../config/site'
@@ -65,20 +66,18 @@ export default function SeminarPage() {
         ogImage: asset('assets/og/og-seminar.jpg'),
       }} />
 
-      <section
-        className="seminar-hero"
-        style={{ '--seminar-hero-image': `url('${asset('assets/hero/hero-seminar.jpg')}')` }}
-      >
-        <div className="container seminar-hero__inner">
-          <div className="seminar-hero__content">
-            <h1 className="seminar-hero__title">認識驗屋從這邊開始</h1>
-            <p className="seminar-hero__desc">40分鐘掌握驗屋流程、報告與溝通重點</p>
-            <a href="#seminar-sessions" className="btn btn-primary seminar-hero__button">
-              <CalendarDays size={18} />查看近期場次
-            </a>
-          </div>
-        </div>
-      </section>
+      <BannerHero
+        desktop={asset('assets/banners/seminar-desktop.webp')}
+        mobile={asset('assets/banners/seminar-mobile.webp')}
+        title="認識驗屋從這邊開始"
+        desc="40 分鐘掌握驗屋流程、報告與溝通重點"
+        scrollTo="seminar-sessions"
+        action={(
+          <a href="#seminar-sessions" className="btn btn-primary">
+            <CalendarDays size={18} />查看近期場次
+          </a>
+        )}
+      />
 
       <section className="seminar-takeaways-section bg-subtle section">
         <div className="container">

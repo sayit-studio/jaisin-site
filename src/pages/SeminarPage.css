@@ -8,50 +8,6 @@
   opacity: 0.5;
 }
 
-/* ── HERO ────────────────────────────────── */
-.seminar-hero {
-  padding: 144px 0 var(--space-16);
-  color: var(--color-text-inverse);
-  /* 背景圖網址由 JSX 以 --seminar-hero-image 帶入（CSS 無法取用 base path）。 */
-  background:
-    linear-gradient(105deg, rgba(13, 35, 64, 0.98) 0%, rgba(13, 35, 64, 0.90) 58%, rgba(13, 35, 64, 0.75) 100%),
-    var(--seminar-hero-image) center / cover;
-}
-
-.seminar-hero__content {
-  max-width: 840px;
-}
-
-.seminar-hero__eyebrow {
-  margin-bottom: var(--space-5);
-  color: var(--color-yellow);
-}
-
-.seminar-hero__title {
-  /* 移除 max-width 限制，讓文字自然換行為兩行 */
-  color: var(--color-text-inverse);
-  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-}
-
-.seminar-hero__title span {
-  color: var(--color-yellow);
-}
-
-.seminar-hero__desc {
-  max-width: 42em;
-  margin-top: var(--space-6);
-  color: var(--color-text-inverse-muted);
-  font-size: var(--text-body-lg-size);
-  line-height: 1.8;
-}
-
-.seminar-hero__button {
-  margin-top: var(--space-8);
-}
-
-
 /* ── SECTION HEADING ─────────────────────── */
 .seminar-section-heading {
   max-width: 640px;
@@ -63,7 +19,6 @@
   color: var(--color-text-secondary);
   line-height: 1.75;
 }
-
 
 /* ── TAKEAWAYS SECTION ───────────────────── */
 .seminar-takeaways-section__heading {
@@ -274,12 +229,6 @@
 }
 
 @media (min-width: 1024px) {
-  .seminar-hero {
-    min-height: 100svh;
-    display: flex;
-    align-items: center;
-  }
-
   .seminar-sessions__layout {
     grid-template-columns: minmax(0, 1fr) 320px;
     align-items: start;
@@ -291,18 +240,9 @@
     top: 100px;
   }
 
-
 }
 
 @media (max-width: 767px) {
-  .seminar-hero {
-    padding-top: 112px;
-  }
-
-  .seminar-hero__desc {
-    font-size: var(--text-body-size);
-  }
-
   .seminar-takeaways {
     margin-top: var(--space-10);
     padding: var(--space-5);
@@ -374,35 +314,4 @@
   .seminar-signup { margin-top: var(--space-2); }
 }
 
-/* Keep the seminar banner copy complete and unbroken. */
-.seminar-hero__title,
-.seminar-hero__desc {
-  max-width: none;
-  white-space: nowrap;
-}
 
-@media (max-width: 767px) {
-  .seminar-hero__title {
-    font-size: clamp(1.25rem, 5.8vw, 2.75rem);
-    letter-spacing: -0.035em;
-  }
-
-  .seminar-hero__desc {
-    font-size: clamp(0.68rem, 3.25vw, 1rem);
-    letter-spacing: -0.025em;
-  }
-}
-.seminar-hero__eyebrow { display: none !important; }
-.seminar-hero__title,
-.seminar-hero__desc {
-  width: max-content;
-  max-width: 100%;
-  white-space: nowrap !important;
-  word-break: keep-all;
-  overflow-wrap: normal;
-}
-
-@media (max-width: 767px) {
-  .seminar-hero__title { font-size: clamp(1.18rem, 5.65vw, 2.75rem); }
-  .seminar-hero__desc { font-size: clamp(0.64rem, 3.12vw, 1rem); }
-}

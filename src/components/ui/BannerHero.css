@@ -60,6 +60,10 @@
   color: rgba(255, 255, 255, 0.82);
 }
 
+.banner-hero__action {
+  margin-top: var(--space-6);
+}
+
 .banner-hero__scroll {
   position: absolute;
   left: 50%;
@@ -108,5 +112,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .banner-hero__scroll { animation: none; }
+  .banner-hero__action {
+  margin-top: var(--space-6);
+}
+
+.banner-hero__scroll { animation: none; }
 }
