@@ -13,7 +13,6 @@ const HOUSE_TYPES = [
 
 const SERVICE_ITEMS = [
   { title: '專業驗屋', to: '/services/inspection', image: 'assets/story/handover-03-inspection.webp' },
-  { title: '裝潢細清', to: '/services/deep-clean', image: 'assets/home-sections/deep-clean-v1.webp' },
   { title: '全屋整裝', to: '/services/renovation', image: 'assets/home-new-space-v1.webp' },
 ]
 
@@ -24,7 +23,7 @@ function SelectionSection({ id, title, items, nextTarget, nextLabel, tone = 'bas
         <header className="service-types__header" data-reveal>
           <h2 className="text-h2 service-types__title">{title}</h2>
         </header>
-        <div className="service-selection__grid" data-stagger>
+        <div className="service-selection__grid" data-stagger style={{ '--card-count': items.length }}>
           {items.map((item) => (
             <Link key={item.title} to={item.to} className="service-selection__card">
               <img src={asset(item.image)} alt={`${item.title}服務示意`} loading="lazy" />

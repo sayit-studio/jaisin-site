@@ -32,10 +32,10 @@ export default function HomePage() {
     <>
       <Seo routeKey="home" fallback={{
         title: '宅心驗屋｜台中專業驗屋公司 — 新成屋、社區驗屋全台服務',
-        description: '宅心驗屋是台灣專業驗屋公司，提供台中新成屋驗屋、社區驗屋、裝潢細清與全屋整裝服務。儀器檢測、圖像化報告，讓你交屋有所依據。',
-        keywords: '宅心驗屋, 專業驗屋公司, 台中新成屋驗屋, 社區驗屋, 驗屋, 裝潢細清, 全屋整裝, 台中驗屋, 全台驗屋',
+        description: '宅心驗屋是台灣專業驗屋公司，提供台中新成屋驗屋、社區驗屋與全屋整裝服務。儀器檢測、圖像化報告，讓你交屋有所依據。',
+        keywords: '宅心驗屋, 專業驗屋公司, 台中新成屋驗屋, 社區驗屋, 驗屋, 全屋整裝, 台中驗屋, 全台驗屋',
         ogTitle: '宅心驗屋｜比你更在乎家的細節',
-        ogDescription: '專業驗屋、裝潢細清、全屋整裝。LINE 立即諮詢。',
+        ogDescription: '專業驗屋、社區驗屋、全屋整裝。LINE 立即諮詢。',
         ogImage: asset('assets/og/og-home.jpg'),
         ogType: 'website',
         jsonLd: {
@@ -43,10 +43,10 @@ export default function HomePage() {
           '@type': 'LocalBusiness',
           name: '宅心驗屋',
           alternateName: '宅心驗屋專業驗屋公司',
-          description: '台灣專業驗屋公司，提供台中新成屋驗屋、社區驗屋、裝潢細清與全屋整裝服務。',
+          description: '台灣專業驗屋公司，提供台中新成屋驗屋、社區驗屋與全屋整裝服務。',
           telephone: '',
           areaServed: ['台灣', '台中', '台北', '新竹', '桃園'],
-          serviceType: ['專業驗屋', '台中新成屋驗屋', '社區驗屋', '裝潢細清', '全屋整裝'],
+          serviceType: ['專業驗屋', '台中新成屋驗屋', '社區驗屋', '全屋整裝'],
           sameAs: [
             'https://www.facebook.com/js0971866797/',
             'https://www.instagram.com/p/DRTvOOPEh9B/',

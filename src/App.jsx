@@ -10,7 +10,6 @@ import NewHomePage           from './pages/services/NewHomePage'
 import UsedHomePage          from './pages/services/UsedHomePage'
 import TownhousePage         from './pages/services/TownhousePage'
 import GroupPage             from './pages/services/GroupPage'
-import DeepCleanPage         from './pages/services/DeepCleanPage'
 import RenovationPage        from './pages/services/RenovationPage'
 import FaqPage               from './pages/FaqPage'
 import PrivacyPage           from './pages/PrivacyPage'
@@ -27,7 +26,6 @@ export function SiteRoutes() {
             <Route path="about"               element={<AboutPage />} />
             <Route path="seminar"             element={<SeminarPage />} />
             <Route path="services/inspection" element={<InspectionOverviewPage />} />
-            <Route path="services/deep-clean" element={<DeepCleanPage />} />
             <Route path="services/renovation" element={<RenovationPage />} />
             <Route path="services/new-home"   element={<NewHomePage />} />
             <Route path="services/used-home"  element={<UsedHomePage />} />

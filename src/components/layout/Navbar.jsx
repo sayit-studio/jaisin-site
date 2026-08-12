@@ -18,7 +18,6 @@ const navItems = [
     label: '服務項目',
     children: [
       { label: '專業驗屋', to: '/services/inspection' },
-      { label: '裝潢細清', to: '/services/deep-clean' },
       { label: '全屋整裝', to: '/services/renovation' },
     ],
   },

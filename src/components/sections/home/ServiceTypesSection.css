@@ -2,7 +2,7 @@
 .service-selection--subtle { background:var(--color-bg-subtle); }
 .service-selection__container { width:100%; }
 .service-types__header { text-align:center; }
-.service-selection__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(14px,2vw,24px); width:min(100%,1100px); height:var(--home-content-height); margin:0 auto; }
+.service-selection__grid { --card-count:3; display:grid; grid-template-columns:repeat(var(--card-count),minmax(0,1fr)); gap:clamp(14px,2vw,24px); width:min(100%,calc(var(--card-count) * 366px)); height:var(--home-content-height); margin:0 auto; }
 .service-selection__card { position:relative; overflow:hidden; min-width:0; border-radius:clamp(22px,2.4vw,34px); background:var(--color-navy); box-shadow:0 16px 38px rgba(13,35,64,.12); }
 .service-selection__card img { width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.75,.25,1); }
 .service-selection__filter { position:absolute; z-index:1; inset:0; background:rgba(6,22,42,.52); transition:background .35s ease; }
@@ -14,7 +14,7 @@
 
 /* Mainstream phones: 360–479px and portrait tablets use breathable stacked cards. */
 @media(max-width:767px){
-  .service-selection__grid { grid-template-columns:1fr; grid-template-rows:repeat(3,minmax(0,1fr)); gap:10px; }
+  .service-selection__grid { width:min(100%,520px); grid-template-columns:1fr; grid-template-rows:repeat(var(--card-count),minmax(0,1fr)); gap:10px; }
   .service-selection__card { border-radius:20px; }
   .service-selection__card strong { padding:16px 52px; font-size:22px; }
   .service-selection__arrow { top:10px; right:10px; width:32px; height:32px; }

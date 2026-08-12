@@ -17,7 +17,6 @@ const routes = [
   '/services/used-home',
   '/services/townhouse',
   '/services/group',
-  '/services/deep-clean',
   '/services/renovation',
   '/faq',
   '/privacy',
