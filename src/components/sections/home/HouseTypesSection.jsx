@@ -48,7 +48,6 @@ export default function HouseTypesSection() {
     <section className="house-types bg-base section">
       <div className="container">
         <div className="house-types__header" data-reveal>
-          <p className="text-label house-types__label">房屋類型 / House Types</p>
           <h2 className="text-h2 house-types__title">先選你的房型，看專屬驗屋建議</h2>
         </div>
 

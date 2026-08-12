@@ -21,7 +21,6 @@ export default function ServiceTemplate({ config }) {
       <BannerHero
         desktop={banner?.desktop}
         mobile={banner?.mobile}
-        eyebrow={header.eyebrow}
         title={header.title}
         desc={header.desc}
         scrollTo="sv-points"
@@ -32,7 +31,6 @@ export default function ServiceTemplate({ config }) {
         <section id="sv-points" className="sv-points bg-base section">
           <div className="container">
             <div className="sv-head" data-reveal>
-              <p className="text-label sv-label">{points.label}</p>
               <h2 className="text-h2">{points.title}</h2>
               {points.sub && <p className="sv-sub">{points.sub}</p>}
             </div>
@@ -57,7 +55,6 @@ export default function ServiceTemplate({ config }) {
         <section className="sv-flow bg-subtle section">
           <div className="container">
             <div className="sv-head sv-head--center" data-reveal>
-              <p className="text-label sv-label">{flow.label}</p>
               <h2 className="text-h2">{flow.title}</h2>
             </div>
             <div className="sv-flow__grid" data-stagger>
@@ -79,7 +76,6 @@ export default function ServiceTemplate({ config }) {
           <div className="container">
             <div className="sv-report__inner">
               <div className="sv-report__text" data-reveal>
-                <p className="text-label sv-label">{report.label}</p>
                 <h2 className="text-h2" dangerouslySetInnerHTML={{ __html: report.title }} />
                 <p className="sv-report__desc">{report.desc}</p>
                 {report.list && (
@@ -117,7 +113,6 @@ export default function ServiceTemplate({ config }) {
         <section className="sv-types bg-subtle section">
           <div className="container">
             <div className="sv-head sv-head--center" data-reveal>
-              <p className="text-label sv-label">{houseLinks.label}</p>
               <h2 className="text-h2">{houseLinks.title}</h2>
             </div>
             <div className="sv-types__grid" data-stagger>

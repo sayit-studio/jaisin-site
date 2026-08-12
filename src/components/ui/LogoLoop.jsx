@@ -39,7 +39,6 @@ export default function LogoLoop() {
   return (
     <div className="logo-loop" aria-label="服務足跡">
       <div className="logo-loop__header">
-        <p className="text-label">服務足跡</p>
         <p className="logo-loop__subtitle">遍及全台 130+ 社區建案</p>
       </div>
       <Track items={COMMUNITIES} />

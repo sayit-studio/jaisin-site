@@ -46,6 +46,8 @@ const MEDIA = [
   },
 ]
 
+const SHOW_TEAM = false
+
 const TEAM = [
   {
     name: '謝育欣',
@@ -96,7 +98,6 @@ export default function AboutPage() {
       }} />
 
       <PageHeader
-        eyebrow="關於宅心驗屋"
         title="家，值得被好好對待"
         desc="宅心用專業陪你顧好，交屋這一路的每個細節"
         image={asset('assets/banners/about-desktop.webp')}
@@ -108,7 +109,6 @@ export default function AboutPage() {
         <div className="container about-mission__container">
           <div className="about-mission__inner">
             <div className="about-mission__text">
-              <p className="text-label about-label">品牌理念</p>
               <h2 className="text-h2">每一個發現，都是安心的依據</h2>
               <p className="about-mission__desc">
                 買房是很多人一生最大的決定。但在興奮與期待之中，很少人有足夠的知識和工具去確認那個家的真實狀態。
@@ -132,10 +132,10 @@ export default function AboutPage() {
       {/* 服務足跡 Logo Loop */}
       <LogoLoop />
 
-      {/* 驗屋師團隊 */}
+      {/* 驗屋師團隊（暫時隱藏：改回 true 即可恢復） */}
+      {SHOW_TEAM && (
       <section className="about-team bg-subtle">
         <div className="container about-team__container">
-          <p className="text-label about-label about-label--center">驗屋師團隊</p>
           <h2 className="text-h2 about-section-title">專業團隊，為家把關</h2>
           <div className="about-team__grid" data-stagger>
             {TEAM.map((m, i) => (
@@ -160,11 +160,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* 媒體報導 */}
       <section className="about-media bg-base">
         <div className="container about-media__container">
-          <p className="text-label about-label about-label--center">媒體報導</p>
           <h2 className="text-h2 about-section-title">各大媒體的認可</h2>
           <div className="about-media__grid" data-stagger>
             {MEDIA.map((m) => (

@@ -9,7 +9,6 @@ export default function CtaBannerSection() {
       <div className="container">
         <div className="cta-banner__inner">
           <div className="cta-banner__text">
-            <p className="text-label cta-banner__label">立即開始</p>
             <h2 className="cta-banner__title">
               準備好讓宅心<br />幫你把關了嗎？
             </h2>

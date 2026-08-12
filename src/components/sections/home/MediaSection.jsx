@@ -50,7 +50,6 @@ export default function MediaSection() {
     <section className="media-section bg-subtle section">
       <div className="container">
         <div className="media-section__header" data-reveal>
-          <p className="text-label media-section__label">媒體報導</p>
           <h2 className="text-h2 media-section__title">產業認證與時事報導</h2>
         </div>
 

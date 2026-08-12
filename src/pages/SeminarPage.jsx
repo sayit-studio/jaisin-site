@@ -120,7 +120,6 @@ export default function SeminarPage() {
             </div>
 
             <aside className="seminar-signup">
-              <p className="text-label seminar-signup__label">報名方式</p>
               <p className="seminar-signup__title">前往 LINE 預約場次</p>
               <p className="seminar-signup__desc">告訴我們想參加的日期，由專人協助確認。</p>
               <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary seminar-signup__button" onClick={handleLineClick}>

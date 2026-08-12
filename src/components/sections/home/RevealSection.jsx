@@ -15,7 +15,6 @@ export default function RevealSection() {
     <section className="reveal-section bg-base section">
       <div className="container">
         <div className="reveal-section__header" data-reveal>
-          <p className="text-label reveal-section__label">科技檢驗設備 / Technology</p>
           <h2 className="text-h2 reveal-section__title">肉眼看不到的，讓儀器說話</h2>
           <p className="reveal-section__desc">
             拖曳下方滑桿，對比一般照片與熱顯像影像——肉眼正常的牆面，熱顯像揭示潛在漏水與水氣。

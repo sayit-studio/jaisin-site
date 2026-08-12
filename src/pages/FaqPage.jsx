@@ -109,7 +109,6 @@ export default function FaqPage() {
       }} />
 
       <PageHeader
-        eyebrow="常見問題 / FAQ"
         title="你想知道的，我們都準備好了"
         desc="驗屋流程、費用、報告，一次看懂"
         image={asset('assets/banners/faq-desktop.webp')}
@@ -120,7 +119,6 @@ export default function FaqPage() {
         <div className="container">
           <div className="faq-page__inner" data-reveal>
             <div className="faq-page__topics">
-              <p className="text-label">常見問題分類</p>
               <h2 className="text-h2">先選擇想了解的主題</h2>
               <p>從預約、檢測到報告與複驗，快速找到需要的答案。</p>
             </div>

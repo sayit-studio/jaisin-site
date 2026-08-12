@@ -9,7 +9,6 @@ import './BannerHero.css'
 export default function BannerHero({
   desktop,
   mobile,
-  eyebrow,
   title,
   desc,
   scrollTo,
@@ -38,7 +37,6 @@ export default function BannerHero({
 
       <div className="container banner-hero__inner">
         <div className="banner-hero__content">
-          {eyebrow && <p className="text-label banner-hero__eyebrow">{eyebrow}</p>}
           <h1 className="banner-hero__title">{title}</h1>
           {desc && <p className="banner-hero__desc">{desc}</p>}
         </div>

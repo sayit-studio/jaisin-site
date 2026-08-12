@@ -37,7 +37,6 @@ export default function HouseTypeTemplate({ config }) {
       <BannerHero
         desktop={banner?.desktop}
         mobile={banner?.mobile}
-        eyebrow={header.eyebrow}
         title={header.title}
         desc={header.desc}
         scrollTo="ht-cases"
@@ -48,7 +47,6 @@ export default function HouseTypeTemplate({ config }) {
         <section id="ht-cases" className="ht-cases bg-base section">
           <div className="container">
             <div className="ht-section-head" data-reveal>
-              <p className="text-label ht-label">{cases.label}</p>
               <h2 className="text-h2">{cases.title}</h2>
               {cases.sub && <p className="ht-sub">{cases.sub}</p>}
             </div>
@@ -77,7 +75,6 @@ export default function HouseTypeTemplate({ config }) {
         <section className="ht-intro bg-subtle section">
           <div className="container">
             <div className="ht-section-head" data-reveal>
-              <p className="text-label ht-label">{intro.label}</p>
               <h2 className="text-h2">{intro.title}</h2>
               {intro.sub && <p className="ht-sub">{intro.sub}</p>}
             </div>
@@ -104,7 +101,6 @@ export default function HouseTypeTemplate({ config }) {
         <section className="ht-compare bg-base section">
           <div className="container">
             <div className="ht-section-head ht-section-head--center" data-reveal>
-              <p className="text-label ht-label">{compare.label}</p>
               <h2 className="text-h2">{compare.title}</h2>
               {compare.sub && <p className="ht-sub">{compare.sub}</p>}
             </div>
@@ -153,7 +149,6 @@ export default function HouseTypeTemplate({ config }) {
           <div className="container">
             <div className="ht-faq__inner">
               <div className="ht-section-head" data-reveal>
-                <p className="text-label ht-label">常見問題</p>
                 <h2 className="text-h2">{faq.title}</h2>
               </div>
               <div className="ht-faq__accordion" data-reveal>
