@@ -1,97 +1,236 @@
-/* ─── Logo Loop (Service Footprint Marquee) ─── */
-.logo-loop {
-  min-height: 100vh;
+/* ─── 服務足跡（地圖 + 數字 + 建案跑馬燈） ─── */
+.footprint {
+  min-height: 100svh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   overflow: hidden;
   padding-block: var(--space-16);
   background-color: var(--color-bg-subtle);
 }
 
-.logo-loop__header {
+.footprint__container {
+  width: 100%;
+}
+
+.footprint__head {
+  max-width: 640px;
+  margin: 0 auto var(--space-10);
   text-align: center;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-10);
 }
 
-.logo-loop__subtitle {
-  font-size: var(--text-body-sm-size);
-  color: var(--color-text-muted);
-  margin-top: var(--space-2);
+.footprint__sub {
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
 }
 
-/* Scrolling track */
-.logo-loop__track {
-  overflow: hidden;
+.footprint__body {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.logo-loop__inner {
-  display: flex;
-  gap: var(--space-4);
-  width: max-content;
-  animation: loopScrollLeft 80s linear infinite;
-}
-
-/* Pause on hover (desktop) */
-@media (hover: hover) {
-  .logo-loop__track:hover .logo-loop__inner {
-    animation-play-state: paused;
-  }
-}
-
-/* Community card */
-.logo-loop__card {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  flex-shrink: 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--color-bg-base);
-  border: 1px solid var(--color-border-base);
-  box-shadow: var(--shadow-xs);
-}
-
-.logo-loop__card-img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--color-bg-subtle);
-}
-
-.logo-loop__card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.logo-loop__card-img-placeholder {
+/* ── 地圖 ── */
+.footprint__map svg {
   display: block;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--color-bg-subtle) 0%, var(--color-border-subtle) 100%);
+  max-height: 60vh;
+  margin: 0 auto;
+  overflow: visible;
 }
 
-.logo-loop__card-name {
-  padding: var(--space-3) var(--space-4);
+.footprint__island {
+  fill: var(--color-bg-base);
+  stroke: var(--color-border-base);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.footprint__pin {
+  cursor: pointer;
+  outline: none;
+}
+
+.footprint__pin-halo {
+  fill: var(--color-yellow);
+  opacity: 0;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.footprint__pin-dot {
+  fill: var(--color-navy);
+  transition: fill var(--transition-base), r var(--transition-base);
+}
+
+.footprint__pin-label {
   font-family: var(--font-sans-tc);
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  fill: var(--color-text-muted);
+  transition: fill var(--transition-base);
+}
+
+.footprint__pin:hover .footprint__pin-halo,
+.footprint__pin:focus-visible .footprint__pin-halo,
+.footprint__pin.is-active .footprint__pin-halo {
+  opacity: 0.35;
+}
+
+.footprint__pin:hover .footprint__pin-dot,
+.footprint__pin:focus-visible .footprint__pin-dot,
+.footprint__pin.is-active .footprint__pin-dot {
+  fill: var(--color-yellow);
+  stroke: var(--color-navy);
+  stroke-width: 1.5;
+}
+
+.footprint__pin:hover .footprint__pin-label,
+.footprint__pin:focus-visible .footprint__pin-label,
+.footprint__pin.is-active .footprint__pin-label {
+  fill: var(--color-text-primary);
+}
+
+/* ── 數字牆 ── */
+.footprint__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0 0 var(--space-8);
+  padding: 0;
+  list-style: none;
+}
+
+.footprint__stat {
+  min-width: 0;
+  padding: var(--space-5) var(--space-3);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-base);
+  text-align: center;
+}
+
+.footprint__stat-value {
+  display: block;
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.1;
+  color: var(--color-navy);
+}
+
+.footprint__stat-label {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-body-sm-size);
+  color: var(--color-text-secondary);
+}
+
+/* ── 選取縣市的建案清單 ── */
+.footprint__detail-city {
+  font-size: var(--text-h4-size);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.footprint__detail-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footprint__detail-list li {
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-base);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm-size);
+}
+
+.footprint__note {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+}
+
+/* ── 建案名跑馬燈（雙排反向） ── */
+.footprint__marquees {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: clamp(28px, 5vw, 56px);
+}
+
+.footprint-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.footprint-marquee__track {
+  display: flex;
+  gap: var(--space-3);
+  width: max-content;
+  animation: footprintScroll 46s linear infinite;
+}
+
+.footprint-marquee__track.is-reverse {
+  animation-direction: reverse;
+}
+
+@media (hover: hover) {
+  .footprint-marquee:hover .footprint-marquee__track { animation-play-state: paused; }
+}
+
+.footprint-chip {
+  flex: 0 0 auto;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-base);
+  color: var(--color-text-secondary);
   font-size: 13px;
   font-weight: var(--weight-medium);
-  color: var(--color-text-secondary);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-@keyframes loopScrollLeft {
+@keyframes footprintScroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-/* Reduced motion: static wrap */
+/* ─── Mobile ─── */
+@media (max-width: 767px) {
+  .footprint {
+    min-height: auto;
+    padding-block: var(--space-12);
+  }
+
+  .footprint__body {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footprint__map svg { max-height: 38vh; }
+
+  .footprint__stats {
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+  }
+
+  .footprint__stat { padding: var(--space-4) var(--space-2); }
+
+  .footprint__detail { text-align: center; }
+  .footprint__detail-list { justify-content: center; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .logo-loop__inner {
+  .footprint-marquee__track {
     animation: none;
     flex-wrap: wrap;
     width: 100%;
