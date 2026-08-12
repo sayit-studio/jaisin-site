@@ -80,7 +80,7 @@ export default function SeminarPage() {
         </div>
       </section>
 
-      <section className="seminar-takeaways-section bg-warm section">
+      <section className="seminar-takeaways-section bg-subtle section">
         <div className="container">
           <div className="seminar-takeaways-section__heading">
             <h2 className="text-h2">說明會三大收穫</h2>

@@ -29,7 +29,7 @@
 .sv-point-card {
   padding: var(--space-6);
   background-color: var(--color-bg-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 

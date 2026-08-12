@@ -30,7 +30,7 @@
   align-items: center;
   padding: clamp(28px, 4vw, 46px);
   border: 1px solid var(--color-border-base);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   background: var(--color-bg-base);
   text-align: center;
 }

@@ -19,12 +19,12 @@
 .cooperation-heading p { margin-top: var(--space-4); color: var(--color-text-secondary); line-height: 1.7; }
 
 .cooperation-types { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); max-width: 1080px; margin: 0 auto; }
-.cooperation-type-card { min-width: 0; padding: clamp(28px, 3vw, 40px); border: 1px solid var(--color-border-base); border-radius: var(--radius-lg); text-align: center; }
+.cooperation-type-card { min-width: 0; padding: clamp(28px, 3vw, 40px); border: 1px solid var(--color-border-base); border-radius: var(--radius-md); text-align: center; }
 .cooperation-type-card > span { width: 58px; height: 58px; display: grid; place-items: center; margin: 0 auto var(--space-5); border-radius: 50%; color: var(--color-yellow); background: var(--color-navy); }
 .cooperation-type-card h2 { color: var(--color-text-primary); font-size: var(--text-h4-size); word-break: keep-all; }
 .cooperation-type-card p { max-width: 30ch; margin: var(--space-3) auto 0; color: var(--color-text-secondary); font-size: var(--text-body-sm-size); line-height: 1.75; }
 
-.cooperation-line { max-width: 760px; margin: var(--space-12) auto 0; padding: clamp(30px, 5vw, 54px); border-radius: var(--radius-lg); color: var(--color-text-inverse); background: var(--color-navy); text-align: center; }
+.cooperation-line { max-width: 760px; margin: var(--space-12) auto 0; padding: clamp(30px, 5vw, 54px); border-radius: var(--radius-md); color: var(--color-text-inverse); background: var(--color-navy); text-align: center; }
 /* 深色底卡片：h2 需覆寫 global.css 的 h1–h6 深色字，否則會被壓成深藍看不清 */
 .cooperation-line h2 { font-size: var(--text-h3-size); color: var(--color-text-inverse); }
 .cooperation-line p { margin: var(--space-3) 0 var(--space-6); color: var(--color-text-inverse-muted); }

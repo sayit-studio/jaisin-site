@@ -97,7 +97,7 @@ export default function GroupPage() {
         </div>
       </section>
 
-      <section className="group-offers bg-warm section">
+      <section className="group-offers bg-subtle section">
         <div className="container">
           <div className="group-section-heading">
             <h2 className="text-h2">團購優惠</h2>

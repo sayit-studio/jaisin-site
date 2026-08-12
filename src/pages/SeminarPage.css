@@ -322,7 +322,7 @@
 .seminar-month {
   padding: clamp(20px, 3vw, 32px);
   border: 1px solid var(--color-border-base);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   background: var(--color-bg-base);
 }
 
