@@ -1,7 +1,34 @@
 # 宅心驗屋官網 — 更新紀錄
 
-> repo：`sayit-studio/jaisin-site`（原始碼）｜預覽站：GitHub Pages `/jaisin-site/`
-> 正式站 `sayit-studio/jaisin` 為獨立部署 repo，本次更新尚未同步過去。
+> repo：`sayit-studio/jaisin-site`（原始碼）
+> 部署：**Cloudflare Pages** `https://jaisin.pages.dev`（自有網域尚未綁定，全站 noindex）
+> 舊：GitHub Pages `/jaisin-site/`（保留為備援）｜正式站 `sayit-studio/jaisin` 仍為舊版靜態站
+
+---
+
+## 2026-08-17｜部署遷移至 Cloudflare Pages
+
+新版官網從 GitHub Pages 預覽站遷至 Cloudflare Pages，根目錄部署（`base = '/'`）。
+
+| 項目 | 內容 |
+|---|---|
+| `_redirects` BOM | 檔首的 UTF-8 BOM 會讓 Cloudflare 把規則來源讀成 `﻿/*`，整條規則被判無效並忽略。GitHub Pages 不讀 `_redirects`，故此問題到 Cloudflare 才浮現 |
+| **移除 `public/404.html`** | GitHub Pages 專用的 SPA 跳轉 hack。Cloudflare 的比對順序是「靜態資產 → `404.html` → `_redirects`」，它會搶在 `_redirects` 之前吃掉所有未命中的請求，導致 `/booking` 等未預渲染路由回 404 |
+| 移除 `index.html` 的解碼腳本 | 與上述 404.html 成對存在，用來還原 `?/path` 編碼，一併移除 |
+| 移除 `spaFallback404` 外掛 | 唯一工作是依 base 改寫 404.html 的 `pathSegmentsToKeep`，已無對象 |
+| `base` 預設改為 `'/'` | 原預設 `'/jaisin/'`。GitHub Pages workflow 仍以 `VITE_BASE_PATH` 明確指定，不受影響 |
+| 新增 `.node-version` | 釘 Node 22，對齊 CI；Cloudflare Pages 預設版本較舊，Vite 8 需要 20 以上 |
+
+**Cloudflare 建置設定**：build command `npm run build`、輸出 `dist`、根目錄留空、
+環境變數 `VITE_BASE_PATH=/` 與 `NODE_VERSION=22`。
+
+**`VITE_SITE_ORIGIN` 刻意不設**——留空時 `absoluteUrl()` 回傳空字串，
+canonical 與 `og:url` 整個不輸出。自有網域定案前，不輸出好過輸出錯的絕對網址。
+
+> ⚠️ 已知待處理：`/* /index.html 200` 會讓不存在的路徑回 200（soft-404）。
+> 全站 noindex 期間無妨，**拆掉 noindex 前必須處理**。
+>
+> ⚠️ 移除 404.html 後，GitHub Pages 那份備援站的深層路由會失效（首頁仍正常）。
 
 ---
 
