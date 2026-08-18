@@ -7,6 +7,11 @@ export function useSectionPager(containerRef) {
     const container = containerRef.current
     if (!container) return undefined
 
+    // Native touch scrolling is more reliable on mobile Safari and embedded
+    // browsers. Keep full-page wheel paging as a desktop enhancement.
+    const desktopPager = window.matchMedia('(min-width: 768px) and (pointer: fine)')
+    if (!desktopPager.matches) return undefined
+
     const footer = document.querySelector('.footer')
     const sections = [...Array.from(container.children), ...(footer ? [footer] : [])]
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -109,6 +114,7 @@ export function useSectionPager(containerRef) {
     }
 
     const onResize = () => {
+      if (!desktopPager.matches) return
       updateViewportHeight()
       currentIndex = nearestIndex()
       window.requestAnimationFrame(() => {

@@ -27,7 +27,7 @@ const SCENES = [
   {
     icon: FileText,
     text: '將問題整理成完整報告',
-    image: 'assets/story/handover-04-report.webp',
+    image: 'assets/story/handover-04-report-v2.webp',
     alt: '驗屋報告內容示意',
   },
   {

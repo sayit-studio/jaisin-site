@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from '../utils/gsap'
 
-const REDUCED_MOTION = typeof window !== 'undefined'
-  && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
 /**
  * Attach scroll-triggered reveal animations to a container.
  * Elements with [data-reveal] fade up individually.
@@ -11,9 +8,21 @@ const REDUCED_MOTION = typeof window !== 'undefined'
  */
 export function useScrollReveal(containerRef) {
   useEffect(() => {
-    if (REDUCED_MOTION || !containerRef.current) return
+    const container = containerRef.current
+    if (!container) return undefined
 
-    const ctx = gsap.context(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+    if (reducedMotion || coarsePointer) {
+      gsap.set(container.querySelectorAll('[data-reveal], [data-stagger] > *'), {
+        clearProps: 'opacity,transform,visibility',
+      })
+      return undefined
+    }
+
+    let ctx
+    try {
+      ctx = gsap.context(() => {
       // Individual fade-up elements
       gsap.utils.toArray('[data-reveal]', containerRef.current).forEach((el) => {
         gsap.fromTo(
@@ -53,7 +62,13 @@ export function useScrollReveal(containerRef) {
           }
         )
       })
-    }, containerRef)
+      }, containerRef)
+    } catch {
+      gsap.set(container.querySelectorAll('[data-reveal], [data-stagger] > *'), {
+        clearProps: 'opacity,transform,visibility',
+      })
+      return undefined
+    }
 
     return () => ctx.revert()
   }, [containerRef])

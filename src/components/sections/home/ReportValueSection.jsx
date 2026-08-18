@@ -18,6 +18,10 @@ export default function ReportValueSection() {
   useEffect(() => {
     const section = rootRef.current
     if (!section) return undefined
+    if (!('IntersectionObserver' in window)) {
+      const frame = window.requestAnimationFrame(() => setVisible(true))
+      return () => window.cancelAnimationFrame(frame)
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -59,7 +63,7 @@ export default function ReportValueSection() {
           <figure className="report-document">
             <span className="report-document__sheet report-document__sheet--back" aria-hidden="true" />
             <span className="report-document__sheet report-document__sheet--middle" aria-hidden="true" />
-            <img src={asset('assets/reports/new-home-report-sample.png')} alt="宅心驗屋報告內容示意" loading="lazy" />
+            <img src={asset('assets/reports/new-home-report-commercial-v2.webp')} alt="宅心驗屋報告內容示意" loading="lazy" />
           </figure>
 
           <div className="report-details" aria-label="驗屋報告內容示意">

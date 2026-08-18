@@ -44,7 +44,7 @@ const REVIEW_PHOTOS = [
   ['assets/reviews/records/review-community-group-v1.webp'],
   ['assets/reviews/records/review-first-buyer-v1.webp'],
   ['assets/reviews/records/review-townhouse-roof-v1.webp'],
-  ['assets/reviews/records/review-report-handover-v1.webp'],
+  ['assets/reviews/records/review-report-handover-v2.webp'],
 ]
 const AVATAR_COLORS = ['#6f52b5','#287f8e','#b35d45','#3973a8','#a36b18','#4f8060']
 

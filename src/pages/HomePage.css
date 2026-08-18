@@ -17,6 +17,23 @@ body.home-pager-mode {
   scroll-snap-stop: always;
 }
 
+/* Touch devices (including phones in landscape) use native document scrolling. */
+@media (pointer: coarse) {
+  html.home-pager-mode,
+  body.home-pager-mode {
+    overscroll-behavior-y: auto;
+    scroll-snap-type: none;
+  }
+
+  .home-page > section {
+    height: auto;
+    min-height: 100svh;
+    max-height: none;
+    overflow: clip;
+    scroll-snap-align: none;
+  }
+}
+
 .home-page > .home-section:not(.hero) {
   display: flex;
   flex-direction: column;
@@ -41,6 +58,20 @@ body.home-pager-mode {
 }
 
 @media (max-width: 767px) {
+  html.home-pager-mode,
+  body.home-pager-mode {
+    overscroll-behavior-y: auto;
+    scroll-snap-type: none;
+  }
+
+  .home-page > section {
+    height: auto;
+    min-height: 100svh;
+    max-height: none;
+    overflow: clip;
+    scroll-snap-align: none;
+  }
+
   .home-page > .home-section:not(.hero) {
     padding-top: clamp(28px, 5.5vh, 48px);
     padding-bottom: clamp(62px, 10vh, 82px);
